@@ -3,9 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Barang;
-use App\Models\Gudang;
-use App\Models\Supplier;
+use App\Models\event;
+use App\Models\buku;
 
 return new class extends Migration
 {
@@ -16,14 +15,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('barang', function (Blueprint $table) {
-            $table->id('id_barang');
-            $table->string('merk');
-            $table->string('jenis');
-            $table->string('tipe');
-            $table->integer('stok');
-            $table->foreignIdFor(Gudang::class,'id_gudang');
-            $table->foreignIdFor(Supplier::class,'id_supplier');
+        Schema::create('event', function (Blueprint $table) {
+            $table->id('id_event');
+            $table->string('nama_event');
+            $table->foreignIdFor(buku::class,'id_buku');
+            $table->foreignIdFor(buku::class,'email_member');
+            $table->foreignIdFor(buku::class,'email_panitia');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -36,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('barangs');
+        Schema::dropIfExists('events');
     }
 };

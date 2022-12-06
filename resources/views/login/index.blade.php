@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login - Global Elektronik Tembalang</title>
+    <title>Login - Komunitas Pecandu Buku</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container"><br>
         <div class="col-md-4 col-md-offset-4">
-            <h3 class="text-center">Global Elektronik Tembalang</h3>
+            <h3 class="text-center">Komunitas Pecandu Buku</h3>
             <hr>
             @if(session('error'))
             <div class="alert alert-danger">
@@ -20,7 +20,7 @@
             <form action="{{ route('actionlogin') }}" method="post">
             @csrf
                 <div class="form-group">
-                    <label>Username/Email</label>
+                    <label>Email</label>
                     <input type="email" name="email" class="form-control" placeholder="Username/Email" required="">
                 </div>
                 <div class="form-group">
